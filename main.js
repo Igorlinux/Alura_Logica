@@ -2,18 +2,24 @@ function generateSenaNumbers() {
 
 	var sena_numbers = []; // CRIA UM ARRAY VAZIA
 
-	for (var qtd = 6; qtd > sena_numbers.length; qtd--) { // LOOP PARA INCREMENTAR 6 VALORES NA ARRAY
+	for (var qtd = 12; qtd > sena_numbers.length; qtd--) { // LOOP PARA INCREMENTAR 6 VALORES NA ARRAY
 
 		var random_number = Math.floor(Math.random() * 60); // VARIÁVEL QUE GUARDA UM NÚMERO RANDÔMICO DE 1 a 60
 
 		if(random_number == 0) { // SE O NÚMERO FOR 0 FAZER:
-			Math.random(this); // RANDOMIZA O VALOR DE NOVO
 			qtd++;
 		}
-		else {
-			sena_numbers.push(random_number); // SE O NÚMERO FOR DIFERENTE DE 0 ACRESCENTA O VALOR RANDÔMICA NA ARRAY sena_numbers
+		else if(sena_numbers.length == 0) {
+			sena_numbers.push(random_number);
 		}
-	};
+		else {
+			for (var contador = 0; contador < sena_numbers.length; contador++ ) {
+				
+				sena_numbers.push(random_number); // SE O NÚMERO FOR DIFERENTE DE 0 ACRESCENTA O VALOR RANDÔMICA NA ARRAY sena_numbers
+			}
+			
+		}
+	}
 
 	return sena_numbers; // RETORNA A ARRAY COM OS 6 VALORES RANDÔMICOS
 };
