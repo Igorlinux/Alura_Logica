@@ -5,15 +5,29 @@ function randomizedNumber() {
 
 function senaNumbers() {
 
-	for (var i = 0, sena_number = []; i < 6; i++) {
+	var alreadyRandomized = {
+
+	};
+
+
+	for (var i = 0; i < 6; i++) {
 
 		var rdn_number = randomizedNumber();
-		sena_number.push(rdn_number);
+
+
+		while (alreadyRandomized[rdn_number]) {
+
+			rdn_number = randomizedNumber();
+
+		}
+		alreadyRandomized[rdn_number] = true;
+		//sena_number.push(rdn_number);
+		
 	}
 
-	return sena_number;
+	return alreadyRandomized;
 }
 
-var x = senaNumbers();
 
+var x = senaNumbers();
 console.log(x);
