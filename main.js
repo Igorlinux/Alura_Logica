@@ -28,6 +28,22 @@ function senaNumbers() {
 	return alreadyRandomized;
 }
 
+var btn = document.getElementsByTagName('button')[0];
 
-var x = senaNumbers();
-console.log(x);
+btn.addEventListener('click', function() {
+
+	var inputs = document.getElementsByTagName('input');
+	var right_numbers = [];
+	var sena_numbers = senaNumbers();
+
+	for(var i = 0; i < inputs.length; i++) {
+		var input_atual = inputs[i];
+		var input_atual_value = input_atual.value;
+		if(sena_numbers[input_atual_value]) {
+			right_numbers.push(input_atual_value);
+		}
+
+	}
+	console.log("Voce acertou o(s) número(s): " + right_numbers);
+
+});
