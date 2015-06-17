@@ -14,17 +14,14 @@ function senaNumbers() {
 
 		var rdn_number = randomizedNumber();
 
-
 		while (alreadyRandomized[rdn_number]) {
 
 			rdn_number = randomizedNumber();
 
 		}
 		alreadyRandomized[rdn_number] = true;
-		//sena_number.push(rdn_number);
 		
 	}
-
 	return alreadyRandomized;
 }
 
@@ -39,6 +36,7 @@ btn.addEventListener('click', function() {
 	for(var i = 0; i < inputs.length; i++) {
 		var input_atual = inputs[i];
 		var input_atual_value = input_atual.value;
+		
 		if(sena_numbers[input_atual_value]) {
 			right_numbers.push(input_atual_value);
 		}
